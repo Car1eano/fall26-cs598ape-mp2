@@ -74,6 +74,7 @@ node::type node::from_str(const std::string &ntype) {
   CASE(ntype, atan2);
   CASE(ntype, div);
   CASE(ntype, fdim);
+  CASE(ntype, gt);
   CASE(ntype, max);
   CASE(ntype, min);
   CASE(ntype, mul);

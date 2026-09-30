@@ -6,6 +6,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends curl gnupg s
     && curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key|apt-key add - \
     && apt-add-repository "deb http://apt.llvm.org/`lsb_release -c | cut -f2`/ llvm-toolchain-`lsb_release -c | cut -f2`-19 main" \
     && apt-get install -y --no-install-recommends autoconf cmake ninja-build gcc g++ linux-tools-common linux-tools-generic libtool llvm-19-dev lld-19 clang-19 libomp-19-dev libopenmpi-dev openmpi-bin git make imagemagick ffmpeg \
+        racket libglib2.0-0t64 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libjpeg-turbo8 libpng16-16t64 \
     && apt-get autoremove -y --purge \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -16,5 +17,10 @@ RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 10 --sl
     && update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-19 10
 
 RUN ln -s /usr/bin/convert /usr/bin/magick
+
+# Verify that racket/draw can render PNGs without a display server.
+RUN racket -e '(require racket/draw) (unless (send (make-bitmap 2 2) save-file "/tmp/racket-smoke.png" (quote png)) (error "PNG rendering failed"))' \
+    && test -s /tmp/racket-smoke.png \
+    && rm /tmp/racket-smoke.png
 
 ENV DEBIAN_FRONTEND=

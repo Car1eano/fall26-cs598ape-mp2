@@ -36,6 +36,7 @@ struct node {
     atan2,
     div,
     fdim,
+    gt,
     max,
     min,
     mul,

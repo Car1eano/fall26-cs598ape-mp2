@@ -6,12 +6,15 @@
 #include <common.h>
 #include <genetic.h>
 #include <iostream>
+#include <iomanip>
+#include <limits>
 #include <numeric>
 #include <ostream>
 #include <philox_engine.h>
 #include <program.h>
 #include <random>
 #include <stack>
+#include <sstream>
 namespace genetic {
 
 /**
@@ -214,7 +217,27 @@ int param::criterion() const {
 }
 
 std::string stringify(const program &prog) {
-  std::string eqn = "( ";
+  // Local helpers keep the exported lambda self-contained under #lang racket.
+  std::string eqn = R"racket((lambda (X)
+  (define (div a b) (if (< (abs b) 0.001) 1.0 (/ a b)))
+  (define (fdim a b) (max (- a b) 0.0))
+  (define (gt a b) (if (> a b) 1.0 0.0))
+  (define (acosh a)
+    (log (+ a (* (sqrt (- a 1.0)) (sqrt (+ a 1.0))))))
+  (define (asinh a)
+    (let* ([v (abs a)] [r (log (+ v (sqrt (+ (* v v) 1.0))))])
+      (if (< a 0.0) (- r) r)))
+  (define (atanh a) (* 0.5 (log (/ (+ 1.0 a) (- 1.0 a)))))
+  (define (cbrt a)
+    (let ([r (expt (abs a) (/ 1.0 3.0))])
+      (if (< a 0.0) (- r) r)))
+  (define (cube a) (* a a a))
+  (define (inv a) (if (< (abs a) 0.001) 0.0 (/ 1.0 a)))
+  (define (rcbrt a) (/ 1.0 (cbrt a)))
+  (define (rsqrt a) (/ 1.0 (sqrt (abs a))))
+  (define (gp-log a) (if (< (abs a) 0.001) 0.0 (log (abs a))))
+  (define (gp-sqrt a) (sqrt (abs a)))
+  )racket";
   std::string delim = "";
   std::stack<int> ar_stack;
   ar_stack.push(0);
@@ -223,12 +246,19 @@ std::string stringify(const program &prog) {
     if (prog.nodes[i].is_terminal()) {
       eqn += delim;
       if (prog.nodes[i].t == node::type::variable) {
-        // variable
-        eqn += "X";
+        eqn += "(list-ref X ";
         eqn += std::to_string(prog.nodes[i].u.fid);
+        eqn += ")";
       } else {
-        // const
-        eqn += std::to_string(prog.nodes[i].u.val);
+        // Preserve float constants and emit inexact Racket numbers, even for 0.
+        std::ostringstream constant;
+        constant << std::setprecision(std::numeric_limits<float>::max_digits10)
+                 << prog.nodes[i].u.val;
+        std::string literal = constant.str();
+        if (literal.find_first_of(".eE") == std::string::npos) {
+          literal += ".0";
+        }
+        eqn += literal;
       }
 
       int end_elem = ar_stack.top();
@@ -244,108 +274,111 @@ std::string stringify(const program &prog) {
         ar_stack.pop();
         ar_stack.push(end_elem - 1);
       }
-      delim = ", ";
+      delim = " ";
     } else {
       ar_stack.push(prog.nodes[i].arity());
       eqn += delim;
       switch (prog.nodes[i].t) {
       // binary operators
       case node::type::add:
-        eqn += "add(";
+        eqn += "(+ ";
         break;
       case node::type::atan2:
-        eqn += "atan2(";
+        eqn += "(atan ";
         break;
       case node::type::div:
-        eqn += "div(";
+        eqn += "(div ";
         break;
       case node::type::fdim:
-        eqn += "fdim(";
+        eqn += "(fdim ";
+        break;
+      case node::type::gt:
+        eqn += "(gt ";
         break;
       case node::type::max:
-        eqn += "max(";
+        eqn += "(max ";
         break;
       case node::type::min:
-        eqn += "min(";
+        eqn += "(min ";
         break;
       case node::type::mul:
-        eqn += "mult(";
+        eqn += "(* ";
         break;
       case node::type::pow:
-        eqn += "pow(";
+        eqn += "(expt ";
         break;
       case node::type::sub:
-        eqn += "sub(";
+        eqn += "(- ";
         break;
       // unary operators
       case node::type::abs:
-        eqn += "abs(";
+        eqn += "(abs ";
         break;
       case node::type::acos:
-        eqn += "acos(";
+        eqn += "(acos ";
         break;
       case node::type::acosh:
-        eqn += "acosh(";
+        eqn += "(acosh ";
         break;
       case node::type::asin:
-        eqn += "asin(";
+        eqn += "(asin ";
         break;
       case node::type::asinh:
-        eqn += "asinh(";
+        eqn += "(asinh ";
         break;
       case node::type::atan:
-        eqn += "atan(";
+        eqn += "(atan ";
         break;
       case node::type::atanh:
-        eqn += "atanh(";
+        eqn += "(atanh ";
         break;
       case node::type::cbrt:
-        eqn += "cbrt(";
+        eqn += "(cbrt ";
         break;
       case node::type::cos:
-        eqn += "cos(";
+        eqn += "(cos ";
         break;
       case node::type::cosh:
-        eqn += "cosh(";
+        eqn += "(cosh ";
         break;
       case node::type::cube:
-        eqn += "cube(";
+        eqn += "(cube ";
         break;
       case node::type::exp:
-        eqn += "exp(";
+        eqn += "(exp ";
         break;
       case node::type::inv:
-        eqn += "inv(";
+        eqn += "(inv ";
         break;
       case node::type::log:
-        eqn += "log(";
+        eqn += "(gp-log ";
         break;
       case node::type::neg:
-        eqn += "neg(";
+        eqn += "(- ";
         break;
       case node::type::rcbrt:
-        eqn += "rcbrt(";
+        eqn += "(rcbrt ";
         break;
       case node::type::rsqrt:
-        eqn += "rsqrt(";
+        eqn += "(rsqrt ";
         break;
       case node::type::sin:
-        eqn += "sin(";
+        eqn += "(sin ";
         break;
       case node::type::sinh:
-        eqn += "sinh(";
+        eqn += "(sinh ";
         break;
       case node::type::sq:
-        eqn += "sq(";
+        eqn += "(sqr ";
         break;
       case node::type::sqrt:
-        eqn += "sqrt(";
+        eqn += "(gp-sqrt ";
         break;
       case node::type::tan:
-        eqn += "tan(";
+        eqn += "(tan ";
         break;
       case node::type::tanh:
-        eqn += "tanh(";
+        eqn += "(tanh ";
         break;
       default:
         break;

@@ -47,6 +47,8 @@ inline float evaluate_node(const node &n, const float *data, const uint64_t stri
       return abs_inval1 < MIN_VAL ? 1.0f : (in[0]/in[1]);//fdividef(in[0], in[1]);
     case node::type::fdim:
       return fdimf(in[0], in[1]);
+    case node::type::gt:
+      return in[0] > in[1] ? 1.0f : 0.0f;
     case node::type::max:
       return fmaxf(in[0], in[1]);
     case node::type::min:

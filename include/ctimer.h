@@ -422,9 +422,9 @@ void ctimer_print(
     char     const * label      /**<[in] label/description for printed time */
 ) {
     if ((label != NULL) && (label[0] != '\0'))
-        printf("Time(%s) = ", label);
+        printf(";;Time(%s) = ", label);
     else
-        printf("Time = ");
+        printf(";;Time = ");
 
     printf("%ld.%09ld sec\n", (long)t.elapsed.tv_sec, t.elapsed.tv_nsec);
 }
