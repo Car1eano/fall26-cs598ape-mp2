@@ -112,6 +112,16 @@ This produces 2 artifacts. [silk-ref.rkt](./benchmark/silk-ref.rkt) contains the
 
 ![Reconstructed Silk wave](./benchmark/silk-waves-reconstructed.png)
 
+Similarly, for the harder square wave benchmark, we start from 
+
+![Square wave](./benchmark/squared-waves.png)
+
+and are able to reconstruct 
+
+![Reconstructed square wave](./benchmark/square-wave-reconstructed.png)
+
+with the source code for the reconstructed wave in [square-wave-ref.rkt](./benchmark/square-wave-ref.rkt)
+
 The time taken for the end to end run can be seen in the last comment of the generated rkt file. Similar to HW1, your goal is to reduce this runtime as much as possible, while maintining/increasing complexity. For the image code, it is sufficient to just optimize image generation, however, you are also free to optimize image drawing too (which is currently implemnented as a DSL in Racket)
 
 ## Input Datasets and Images
