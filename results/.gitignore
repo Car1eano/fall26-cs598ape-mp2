@@ -1,0 +1,5 @@
+*/source/
+*.data
+*.data.old
+*/profile-binary
+*/gmon.out
