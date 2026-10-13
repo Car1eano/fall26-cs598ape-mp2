@@ -34,3 +34,4 @@
 compile_commands.json
 .cache/
 genetic_benchmark
+__pycache__/

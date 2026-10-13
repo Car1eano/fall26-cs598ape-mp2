@@ -1,0 +1,2 @@
+origin	git@github.com:Car1eano/fall26-cs598ape-mp2.git (fetch)
+origin	git@github.com:Car1eano/fall26-cs598ape-mp2.git (push)

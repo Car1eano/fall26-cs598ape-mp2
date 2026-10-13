@@ -3,3 +3,5 @@
 *.data.old
 */profile-binary
 */gmon.out
+*/stack-test
+*/evaluation-test

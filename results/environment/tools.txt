@@ -1,0 +1,4 @@
+/usr/bin/make
+/usr/bin/g++
+/usr/bin/perf
+/usr/bin/valgrind

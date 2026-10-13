@@ -1,0 +1,18 @@
+Initial read-only check: working directory /home/poching2/fall26-cs598ape-mp2;
+hostname fa26-cs598a-048.cs.illinois.edu; git status --short returned no entries.
+Origin fetch/push: git@github.com:Car1eano/fall26-cs598ape-mp2.git.
+Initial HEAD: f19cc633664c9a333b208049770424d58d14909e.
+Makefile had no optimization flag; reg_stack.h used linear-scan push/pop.
+No AGENTS.md found in the repository or its ancestor directories.
+The initial-status.txt snapshot was taken AFTER adding tools/ and results/;
+its untracked entries are newly created experiment files, not pre-existing edits.
+Baseline was archived from the initial HEAD, unaffected by working-tree additions.
+Baseline build: make -j2 CXXFLAGS='-std=c++17 -Wall -Wextra -I include -I.'
+The missing optimization flag means GCC default -O0.
+All variants use the same unpinned, single-process benchmark policy on this VM.
+Background VM/system services were present; no claim of exclusive host resources.
+PDF extraction: temporary uv environment, Python 3.12.15, pypdf 6.20.1.
+Benchmark harness: system Python 3.14.4.
+Plotting: temporary uv environment, Python 3.12.15, matplotlib 3.11.2, numpy 2.5.4.
+Racket and Docker were not found; neither is required for the three CSV benchmarks.
+The supplied PDF was read in full (9 pages including the appendix).
