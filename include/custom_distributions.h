@@ -25,7 +25,10 @@ public:
   // The engine is expected to provide a uint32_t via operator().
   template <typename Engine> result_type operator()(Engine &eng) {
     // Compute the range size.
-    uint32_t range = static_cast<uint32_t>(b_ - a_ + 1);
+    // Widen before arithmetic: the default int range includes INT_MAX, so
+    // computing its size in int would overflow. Keep rejection sampling intact.
+    uint32_t range = static_cast<uint32_t>(
+        static_cast<int64_t>(b_) - static_cast<int64_t>(a_) + 1);
     // Calculate the largest multiple of 'range' that fits in a uint32_t.
     uint32_t limit = std::numeric_limits<uint32_t>::max() -
                      (std::numeric_limits<uint32_t>::max() % range);
