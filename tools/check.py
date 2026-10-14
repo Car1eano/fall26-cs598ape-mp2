@@ -16,6 +16,7 @@ def main():
     p.add_argument('--optimization', default='-O2')
     p.add_argument('--sanitize', action='store_true')
     p.add_argument('--sorting', action='store_true')
+    p.add_argument('--mutations', action='store_true')
     a = p.parse_args()
     source = a.source.resolve()
     dest = ROOT / 'results' / a.label
@@ -28,7 +29,7 @@ def main():
         env.update(ASAN_OPTIONS='detect_leaks=1:halt_on_error=1',
                    UBSAN_OPTIONS='halt_on_error=1:print_stacktrace=1')
     records = []
-    for name in ['stack', 'evaluation'] + (['sorting'] if a.sorting else []):
+    for name in ['stack', 'evaluation'] + (['sorting'] if a.sorting else []) + (['mutation_memory'] if a.mutations else []):
         binary = dest / (name + '-test')
         cmd = ['g++', *flags, str(ROOT / 'tests' / (name + '_test.cpp'))]
         if name != 'stack':

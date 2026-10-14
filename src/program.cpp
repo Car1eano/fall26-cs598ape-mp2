@@ -474,15 +474,20 @@ void hoist_mutation(const program &prog, program &p_out, const param &params,
   sub_end += prog_start;
 
   p_out.len = (prog_start) + (sub_end - sub_start) + (prog.len - prog_end);
-  p_out.nodes = new node[p_out.len];
+  node *new_nodes = new node[p_out.len];
   p_out.metric = prog.metric;
 
   // Copy node slices using std::copy
-  std::copy(prog.nodes, prog.nodes + prog_start, p_out.nodes);
+  std::copy(prog.nodes, prog.nodes + prog_start, new_nodes);
   std::copy(prog.nodes + sub_start, prog.nodes + sub_end,
-            p_out.nodes + prog_start);
+            new_nodes + prog_start);
   std::copy(prog.nodes + prog_end, prog.nodes + prog.len,
-            p_out.nodes + (prog_start) + (sub_end - sub_start));
+            new_nodes + (prog_start) + (sub_end - sub_start));
+
+  // This output object is reused across generations. Release its old nodes
+  // only after the new tree has been copied.
+  delete[] p_out.nodes;
+  p_out.nodes = new_nodes;
 
   // Update depth
   p_out.depth = get_depth(p_out);
