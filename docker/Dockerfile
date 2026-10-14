@@ -1,26 +1,39 @@
 FROM ubuntu:24.04
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -y update && apt-get install -y --no-install-recommends curl gnupg software-properties-common \
-    && curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key|apt-key add - \
-    && apt-add-repository "deb http://apt.llvm.org/`lsb_release -c | cut -f2`/ llvm-toolchain-`lsb_release -c | cut -f2`-19 main" \
-    && apt-get install -y --no-install-recommends autoconf cmake ninja-build gcc g++ linux-tools-common linux-tools-generic libtool llvm-19-dev lld-19 clang-19 libomp-19-dev libopenmpi-dev openmpi-bin git make imagemagick ffmpeg \
-        racket libglib2.0-0t64 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libjpeg-turbo8 libpng16-16t64 \
-    && apt-get autoremove -y --purge \
-    && apt-get clean -y \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        binutils g++ gdb git make python3 python3-venv tar valgrind \
+        linux-tools-common linux-tools-generic racket fonts-dejavu-core \
+        libglib2.0-0t64 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
+        libjpeg-turbo8 libpng16-16t64 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 10 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-19 \
-    && update-alternatives --install /usr/bin/opt opt /usr/bin/opt-19 10 \
-    && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-19 10 \
-    && update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-19 10
+COPY tools/plot-requirements.txt /tmp/plot-requirements.txt
 
-RUN ln -s /usr/bin/convert /usr/bin/magick
+RUN python3 -m venv /opt/mp2-venv \
+    && /opt/mp2-venv/bin/pip install --no-cache-dir -r /tmp/plot-requirements.txt \
+    && rm /tmp/plot-requirements.txt
 
-# Verify that racket/draw can render PNGs without a display server.
+ENV PATH="/opt/mp2-venv/bin:${PATH}"
+ENV MPLCONFIGDIR=/tmp/mp2-matplotlib
+
+# Check headless Racket and Python PNG rendering during the build.
 RUN racket -e '(require racket/draw) (unless (send (make-bitmap 2 2) save-file "/tmp/racket-smoke.png" (quote png)) (error "PNG rendering failed"))' \
     && test -s /tmp/racket-smoke.png \
-    && rm /tmp/racket-smoke.png
+    && rm /tmp/racket-smoke.png \
+    && python3 -c 'import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt; plt.plot([0, 1], [0, 1]); plt.savefig("/tmp/python-smoke.png")' \
+    && test -s /tmp/python-smoke.png \
+    && rm /tmp/python-smoke.png \
+    && rm -rf /tmp/mp2-matplotlib
 
-ENV DEBIAN_FRONTEND=
+# Use the installed perf binary rather than the host-kernel lookup wrapper.
+RUN for perf_binary in /usr/lib/linux-tools/*/perf; do \
+        if [ -x "$perf_binary" ]; then \
+            ln -s "$perf_binary" /usr/local/bin/perf; break; \
+        fi; \
+    done \
+    && perf --version
+
+WORKDIR /host

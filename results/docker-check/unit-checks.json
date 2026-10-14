@@ -1,0 +1,99 @@
+[
+  {
+    "test": "stack",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-check-source/include",
+      "-I/tmp/mp2-check-source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-check-source/tests/stack_test.cpp",
+      "-o",
+      "/tmp/mp2-check-source/results/docker-unit-check/stack-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "evaluation",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-check-source/include",
+      "-I/tmp/mp2-check-source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-check-source/tests/evaluation_test.cpp",
+      "/tmp/mp2-check-source/src/genetic.cpp",
+      "/tmp/mp2-check-source/src/node.cpp",
+      "/tmp/mp2-check-source/src/philox_rng.cpp",
+      "/tmp/mp2-check-source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-check-source/results/docker-unit-check/evaluation-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "sorting",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-check-source/include",
+      "-I/tmp/mp2-check-source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-check-source/tests/sorting_test.cpp",
+      "/tmp/mp2-check-source/src/genetic.cpp",
+      "/tmp/mp2-check-source/src/node.cpp",
+      "/tmp/mp2-check-source/src/philox_rng.cpp",
+      "/tmp/mp2-check-source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-check-source/results/docker-unit-check/sorting-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "mutation_memory",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-check-source/include",
+      "-I/tmp/mp2-check-source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-check-source/tests/mutation_memory_test.cpp",
+      "/tmp/mp2-check-source/src/genetic.cpp",
+      "/tmp/mp2-check-source/src/node.cpp",
+      "/tmp/mp2-check-source/src/philox_rng.cpp",
+      "/tmp/mp2-check-source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-check-source/results/docker-unit-check/mutation_memory-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "distributions",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-check-source/include",
+      "-I/tmp/mp2-check-source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-check-source/tests/distributions_test.cpp",
+      "-o",
+      "/tmp/mp2-check-source/results/docker-unit-check/distributions-test"
+    ],
+    "returncode": 0
+  }
+]

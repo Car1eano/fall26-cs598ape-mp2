@@ -1,0 +1,16 @@
+test_dataset_mismatch_rejected (benchmark_tools_test.BenchmarkToolsTest.test_dataset_mismatch_rejected) ... ok
+test_different_formulas_rejected (benchmark_tools_test.BenchmarkToolsTest.test_different_formulas_rejected) ... ok
+test_duplicate_run_rejected (benchmark_tools_test.BenchmarkToolsTest.test_duplicate_run_rejected) ... ok
+test_failed_run_rejected (benchmark_tools_test.BenchmarkToolsTest.test_failed_run_rejected) ... ok
+test_instrumented_timings_rejected (benchmark_tools_test.BenchmarkToolsTest.test_instrumented_timings_rejected) ... ok
+test_invalid_batch_does_not_overwrite_artifacts (benchmark_tools_test.BenchmarkToolsTest.test_invalid_batch_does_not_overwrite_artifacts) ... ok
+test_missing_run_rejected (benchmark_tools_test.BenchmarkToolsTest.test_missing_run_rejected) ... ok
+test_nonfinite_wall_time_rejected (benchmark_tools_test.BenchmarkToolsTest.test_nonfinite_wall_time_rejected) ... ok
+test_raw_output_is_rechecked (benchmark_tools_test.BenchmarkToolsTest.test_raw_output_is_rechecked) ... ok
+test_recorded_time_checked_against_stdout (benchmark_tools_test.BenchmarkToolsTest.test_recorded_time_checked_against_stdout) ... ok
+test_warmup_excluded_and_statistics (benchmark_tools_test.BenchmarkToolsTest.test_warmup_excluded_and_statistics) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.115s
+
+OK

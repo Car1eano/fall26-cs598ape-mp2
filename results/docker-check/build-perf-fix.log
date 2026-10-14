@@ -1,0 +1,39 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  53.76kB
+Step 1/10 : FROM ubuntu:24.04
+ ---> 534baea6a22c
+Step 2/10 : ARG DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> 43e9405aa5f4
+Step 3/10 : RUN apt-get update     && apt-get install -y --no-install-recommends         binutils g++ gdb git make python3 python3-venv tar valgrind         linux-tools-common linux-tools-generic racket fonts-dejavu-core         libglib2.0-0t64 libcairo2 libpango-1.0-0 libpangocairo-1.0-0         libjpeg-turbo8 libpng16-16t64     && rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> cb72a6ebca9e
+Step 4/10 : COPY tools/plot-requirements.txt /tmp/plot-requirements.txt
+ ---> Using cache
+ ---> 79482bf42560
+Step 5/10 : RUN python3 -m venv /opt/mp2-venv     && /opt/mp2-venv/bin/pip install --no-cache-dir -r /tmp/plot-requirements.txt     && rm /tmp/plot-requirements.txt
+ ---> Using cache
+ ---> ce5344ee835f
+Step 6/10 : ENV PATH="/opt/mp2-venv/bin:${PATH}"
+ ---> Using cache
+ ---> 8c353b6c7f9d
+Step 7/10 : ENV MPLCONFIGDIR=/tmp/mp2-matplotlib
+ ---> Using cache
+ ---> faf27e3a66ba
+Step 8/10 : RUN racket -e '(require racket/draw) (unless (send (make-bitmap 2 2) save-file "/tmp/racket-smoke.png" (quote png)) (error "PNG rendering failed"))'     && test -s /tmp/racket-smoke.png     && rm /tmp/racket-smoke.png     && python3 -c 'import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt; plt.plot([0, 1], [0, 1]); plt.savefig("/tmp/python-smoke.png")'     && test -s /tmp/python-smoke.png     && rm /tmp/python-smoke.png     && rm -rf /tmp/mp2-matplotlib
+ ---> Using cache
+ ---> 591754864151
+Step 9/10 : RUN for perf_binary in /usr/lib/linux-tools/*/perf; do         if [ -x "$perf_binary" ]; then             ln -s "$perf_binary" /usr/local/bin/perf; break;         fi;     done     && perf --version
+ ---> Running in f3045becdd27
+perf version 6.8.12
+ ---> Removed intermediate container f3045becdd27
+ ---> 30df8ee14a0e
+Step 10/10 : WORKDIR /host
+ ---> Running in 64f3d3b5cadf
+ ---> Removed intermediate container 64f3d3b5cadf
+ ---> 9b1fc43d6d81
+Successfully built 9b1fc43d6d81
+Successfully tagged cs598ape-mp2:latest

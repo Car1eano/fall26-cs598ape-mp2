@@ -1,0 +1,1 @@
+['-std=c++17', '-O2', '-g', '-I/tmp/mp2-check-source/include', '-I/tmp/mp2-check-source', '-fsanitize=address,undefined', '-fno-omit-frame-pointer']

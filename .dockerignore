@@ -1,0 +1,5 @@
+**
+!docker/
+!docker/Dockerfile
+!tools/
+!tools/plot-requirements.txt

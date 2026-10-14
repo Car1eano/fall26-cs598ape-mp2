@@ -1,0 +1,14 @@
+==121== Memcheck, a memory error detector
+==121== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==121== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==121== Command: ./genetic_benchmark diabetes
+==121== 
+==121== 
+==121== HEAP SUMMARY:
+==121==     in use at exit: 0 bytes in 0 blocks
+==121==   total heap usage: 62,392 allocs, 62,392 frees, 7,541,101,862 bytes allocated
+==121== 
+==121== All heap blocks were freed -- no leaks are possible
+==121== 
+==121== For lists of detected and suppressed errors, rerun with: -s
+==121== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

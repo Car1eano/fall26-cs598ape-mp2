@@ -1,0 +1,86 @@
+[
+    {
+        "Architecture": "amd64",
+        "Config": {
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Env": [
+                "PATH=/opt/mp2-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MPLCONFIGDIR=/tmp/mp2-matplotlib"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "WorkingDir": "/host"
+        },
+        "Created": "2026-10-14T00:45:30.055031401-05:00",
+        "Descriptor": {
+            "digest": "sha256:9b1fc43d6d81ab4856aed7947075912f3194527e9a0fb10f9770aaf9322ee582",
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "size": 1618
+        },
+        "Id": "sha256:9b1fc43d6d81ab4856aed7947075912f3194527e9a0fb10f9770aaf9322ee582",
+        "Metadata": {
+            "LastTagTime": "2026-10-14T05:45:30.121971131Z"
+        },
+        "Os": "linux",
+        "Parent": "sha256:30df8ee14a0e8209e549bf7424652917ca33663a3c7335f544a4fd8d62eeb338",
+        "RepoDigests": [
+            "cs598ape-mp2@sha256:9b1fc43d6d81ab4856aed7947075912f3194527e9a0fb10f9770aaf9322ee582"
+        ],
+        "RepoTags": [
+            "cs598ape-mp2:latest"
+        ],
+        "RootFS": {
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+                "sha256:13bd4b591293d05eab2e37002a04e1772ff60bf313e2a92570f63951a29fafdc",
+                "sha256:c87de91de3ba47d1f48b5fad1cf269e0371c56b63c3f766f9f36cd23852b6154",
+                "sha256:1313679766c48efafeacc65117faf6e0bbfd15166e2acceeeb5a6646b5309455",
+                "sha256:a44bdae96a7a28b81f4a5cb05848092675334bdeb7f7ea9488ee1ab016ed1244",
+                "sha256:cbed4a77002737560feeea1c36e7c7a525d98305079debd6fee982ad9cbaac2b"
+            ],
+            "Type": "layers"
+        },
+        "Size": 462612550
+    },
+    {
+        "Id": "sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55",
+        "RepoTags": [
+            "ubuntu:24.04"
+        ],
+        "RepoDigests": [
+            "ubuntu@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55"
+        ],
+        "Created": "2026-09-18T21:20:38.103397332Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 29773586,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-14T05:29:02.766583305Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55",
+            "size": 6688
+        }
+    }
+]
