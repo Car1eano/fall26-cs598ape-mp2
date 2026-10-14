@@ -1,0 +1,18 @@
+[
+  {
+    "dataset": "cancer",
+    "command": [
+      "./genetic_benchmark",
+      "cancer"
+    ],
+    "returncode": 0
+  },
+  {
+    "dataset": "housing",
+    "command": [
+      "./genetic_benchmark",
+      "housing"
+    ],
+    "returncode": 0
+  }
+]

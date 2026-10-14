@@ -1,0 +1,36 @@
+[
+  {
+    "test": "stack",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O0",
+      "-g",
+      "-I/home/poching2/fall26-cs598ape-mp2/results/stack/source/include",
+      "-I/home/poching2/fall26-cs598ape-mp2/results/stack/source",
+      "/home/poching2/fall26-cs598ape-mp2/tests/stack_test.cpp",
+      "-o",
+      "/home/poching2/fall26-cs598ape-mp2/results/check-stack/stack-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "evaluation",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O0",
+      "-g",
+      "-I/home/poching2/fall26-cs598ape-mp2/results/stack/source/include",
+      "-I/home/poching2/fall26-cs598ape-mp2/results/stack/source",
+      "/home/poching2/fall26-cs598ape-mp2/tests/evaluation_test.cpp",
+      "/home/poching2/fall26-cs598ape-mp2/results/stack/source/src/genetic.cpp",
+      "/home/poching2/fall26-cs598ape-mp2/results/stack/source/src/node.cpp",
+      "/home/poching2/fall26-cs598ape-mp2/results/stack/source/src/philox_rng.cpp",
+      "/home/poching2/fall26-cs598ape-mp2/results/stack/source/src/program.cpp",
+      "-o",
+      "/home/poching2/fall26-cs598ape-mp2/results/check-stack/evaluation-test"
+    ],
+    "returncode": 0
+  }
+]

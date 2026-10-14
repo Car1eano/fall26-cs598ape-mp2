@@ -1,0 +1,14 @@
+{
+  "commit": "4850ad7fd0d80dad4d13c0e2ed585ce8f30c4012",
+  "mode": "sanitize",
+  "flags": "-std=c++17 -O2 -g -Wall -Wextra -I include -I. -fsanitize=address,undefined -fno-omit-frame-pointer",
+  "datasets": [
+    "diabetes",
+    "cancer",
+    "housing"
+  ],
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+  }
+}

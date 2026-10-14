@@ -1,0 +1,1 @@
+['-std=c++17', '-O0', '-g', '-I/home/poching2/fall26-cs598ape-mp2/results/stack/source/include', '-I/home/poching2/fall26-cs598ape-mp2/results/stack/source']

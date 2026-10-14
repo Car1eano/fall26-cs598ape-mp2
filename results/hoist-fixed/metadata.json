@@ -1,0 +1,50 @@
+{
+  "commit": "4850ad7fd0d80dad4d13c0e2ed585ce8f30c4012",
+  "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+  "stack_candidate": false,
+  "started_utc": "2026-10-14T00:31:02Z",
+  "command": [
+    "./genetic_benchmark",
+    "<dataset>"
+  ],
+  "repeats": 3,
+  "warmups": 1,
+  "datasets": [
+    "diabetes",
+    "cancer",
+    "housing"
+  ],
+  "source_files": {
+    "src/node.cpp": "785b7b46ada4e5c35dd29f5542e46d602d7d7f68cdcca266937cfe9a195f7520",
+    "src/program.cpp": "a6719d8a79e0ceacebf56c17660d7b0ff1bc0d6689c26e310c57a4584b868994",
+    "src/philox_rng.cpp": "8a52532a548f8adc89a5ea9915aea9bd95ed34bc576deb9f471f5a2d2c00e434",
+    "src/node_detail.h": "64f4b4ec28e3e35ec434030735be949536a745f61e69cbc88033697d2a6f43b1",
+    "src/reg_stack.h": "54b7f1558f4ce38dc9051bb0dd898eb953898c41330ddd310f806cb9462b6fe2",
+    "src/genetic.cpp": "b0f13145bc9ea633bda93a776fe95159de47adb64887b33b8a4f587e0ba25f1c",
+    "src/constants.h": "ef4ea21769829582b0d37a60c3ef599d0f4b53e80f6a6af4b9a3a3fe8744a661",
+    "include/node.h": "ea05a9e8999e84a2acc3c37c90e89f9babd79f21e02a68dbc542159dc5279daf",
+    "include/fitness.h": "9e981886e679a8cf652ce97d72ebadca5ca0b016790e339a977fd2d91c089551",
+    "include/program.h": "04f1ee25ad731f079384d3145567f8c3b3c882b56e2b79ffb7645d4cf149c18f",
+    "include/philox_rng.h": "668a9015859f700b5cc04e08cd97bcf0e4c8fe51e9ed5d4c6a6df8095b7a0fec",
+    "include/stb_image.h": "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3",
+    "include/genetic.h": "8726903b24fbd71990357787dac94f48b2d4f1fe1bf6b73abdb6d0c939708a4f",
+    "include/ctimer.h": "7ff4f602239a1aa9e81a67db0844444803fe458986cfc2af9e3186ce2ba1e746",
+    "include/custom_distributions.h": "d9099b91f9417052205337b08eeb4434bcd3b02e568c435e5dabf7246a51268d",
+    "include/common.h": "d5f9ef86569a3a8cbb65f00672c76a5b5783d1c569630e6622a26152b4023b49",
+    "include/philox_engine.h": "634b178b3be20948d0358f1af44d6a294cd97973ae0098b2971b2edfef224b73",
+    "benchmark/silk-waves-reconstructed.png": "10bf4d581779f2fabe39d5adb4a141f05af7aee9b8ded261599299ce13011323",
+    "benchmark/square-wave-reconstructed.png": "00d5efc100fe47a7e130e324a9325f9af6b8281c8022016f1a8063ad8e942ce3",
+    "benchmark/interference-color.png": "2c0fac5b6fb6a83e859a4ea4ff8ae5ec67305548ccce7eb102bbc2bc5201de25",
+    "benchmark/genetic_benchmark.cpp": "a34dd697b0be5ef4b3a769b256b1ae723780df27404329fe69c591f48e745d81",
+    "benchmark/silk-waves.png": "2b7f1499b1920bcb01e3ab22f3d5609686cb837baae335e62985807d8de3bd44",
+    "benchmark/housing.csv": "6f90e5ca3898a6a72997fa1565fee052734e33ec2c83788d16551077d225fe8d",
+    "benchmark/diabetes.csv": "e400357ef0be12bf77c27db7b41c74d21683d12ecd2631b6e3b2e4f72eb93dd4",
+    "benchmark/generate-easy-image.rkt": "6e2ed2891251dd3ff1bb469a9ab59b2c03264074ff334e997965d8b85cf17454",
+    "benchmark/squared-waves.png": "4aed00d019e2c88537c72cf23b752acfacb49d77c1af983fcce66c54ba124e94",
+    "benchmark/prepare_datasets.py": "295a9a517314191f0a7c8fb97c02ca88069c59606e373e984bef7f546aa41c04",
+    "benchmark/triangle-facets.png": "4ef619d5f02a091c46fc69263180cd6862755e80e34027413e957a80bd206ce3",
+    "benchmark/cancer.csv": "0999d60b22db6ab30341c188d078bbfc37d7c6504892cd7c3240b5a423d20f62",
+    "benchmark/silk-ref.rkt": "cc25e90c85916962c9c941f8d74df1cacd9e5d9d6765e98717ae2cb8efac7d45",
+    "benchmark/square-wave-ref.rkt": "0665ecd4ccfc31941c2fc537d7dd83420b51f3b421d88bc85045d98681accc3a"
+  }
+}

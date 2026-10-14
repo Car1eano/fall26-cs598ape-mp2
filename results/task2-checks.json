@@ -1,0 +1,38 @@
+{
+  "commit": "51324285ab91bd7b27998be74809728a1ce7c23e",
+  "complete": true,
+  "checks": [
+    {
+      "directory": "memory-final-asan",
+      "dataset": "diabetes",
+      "mode": "sanitize",
+      "returncode": 0,
+      "matches_baseline_output": true,
+      "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500"
+    },
+    {
+      "directory": "memory-task2-asan",
+      "dataset": "cancer",
+      "mode": "sanitize",
+      "returncode": 0,
+      "matches_baseline_output": true,
+      "output_sha256": "67f6a9ea0539d2e0280d68835989fa67182443208263d6f541a5aa23781dfab3"
+    },
+    {
+      "directory": "memory-task2-asan",
+      "dataset": "housing",
+      "mode": "sanitize",
+      "returncode": 0,
+      "matches_baseline_output": true,
+      "output_sha256": "292ac35600655b70cb928cc4a9d7c906a22cb453fcad1dcd8276e23f19e27724"
+    },
+    {
+      "directory": "memory-task2-valgrind",
+      "dataset": "diabetes",
+      "mode": "valgrind",
+      "returncode": 0,
+      "matches_baseline_output": true,
+      "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500"
+    }
+  ]
+}

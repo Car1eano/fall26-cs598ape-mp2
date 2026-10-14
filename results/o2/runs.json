@@ -1,0 +1,242 @@
+[
+  {
+    "dataset": "diabetes",
+    "run": 0,
+    "warmup": true,
+    "returncode": 0,
+    "wall_seconds": 10.147520326999256,
+    "internal_seconds": 10.143074915,
+    "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ]
+  },
+  {
+    "dataset": "diabetes",
+    "run": 1,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 10.141333782999936,
+    "internal_seconds": 10.137132884,
+    "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ]
+  },
+  {
+    "dataset": "diabetes",
+    "run": 2,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 10.174226786999498,
+    "internal_seconds": 10.170002638,
+    "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ]
+  },
+  {
+    "dataset": "diabetes",
+    "run": 3,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 10.208782724999764,
+    "internal_seconds": 10.204103217,
+    "output_sha256": "a51b8dd6ff9242f3b6480cc7a4cffc756c94ab464cec7db99e8cda1544bd9500",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ]
+  },
+  {
+    "dataset": "cancer",
+    "run": 0,
+    "warmup": true,
+    "returncode": 0,
+    "wall_seconds": 60.425710302999505,
+    "internal_seconds": 60.401341123,
+    "output_sha256": "67f6a9ea0539d2e0280d68835989fa67182443208263d6f541a5aa23781dfab3",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ]
+  },
+  {
+    "dataset": "cancer",
+    "run": 1,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 60.88474844200027,
+    "internal_seconds": 60.860423263,
+    "output_sha256": "67f6a9ea0539d2e0280d68835989fa67182443208263d6f541a5aa23781dfab3",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ]
+  },
+  {
+    "dataset": "cancer",
+    "run": 2,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 60.72600589299964,
+    "internal_seconds": 60.701596557,
+    "output_sha256": "67f6a9ea0539d2e0280d68835989fa67182443208263d6f541a5aa23781dfab3",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ]
+  },
+  {
+    "dataset": "cancer",
+    "run": 3,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 60.453332344000046,
+    "internal_seconds": 60.428652515,
+    "output_sha256": "67f6a9ea0539d2e0280d68835989fa67182443208263d6f541a5aa23781dfab3",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ]
+  },
+  {
+    "dataset": "housing",
+    "run": 0,
+    "warmup": true,
+    "returncode": 0,
+    "wall_seconds": 117.85322943200026,
+    "internal_seconds": 117.847005086,
+    "output_sha256": "292ac35600655b70cb928cc4a9d7c906a22cb453fcad1dcd8276e23f19e27724",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ]
+  },
+  {
+    "dataset": "housing",
+    "run": 1,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 118.12067511500027,
+    "internal_seconds": 118.114591662,
+    "output_sha256": "292ac35600655b70cb928cc4a9d7c906a22cb453fcad1dcd8276e23f19e27724",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ]
+  },
+  {
+    "dataset": "housing",
+    "run": 2,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 117.94659873199998,
+    "internal_seconds": 117.940360931,
+    "output_sha256": "292ac35600655b70cb928cc4a9d7c906a22cb453fcad1dcd8276e23f19e27724",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ]
+  },
+  {
+    "dataset": "housing",
+    "run": 3,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 117.71322740100004,
+    "internal_seconds": 117.706953558,
+    "output_sha256": "292ac35600655b70cb928cc4a9d7c906a22cb453fcad1dcd8276e23f19e27724",
+    "matches_warmup": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ]
+  }
+]

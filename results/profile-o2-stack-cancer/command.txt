@@ -1,0 +1,1 @@
+['g++', '-std=c++17', '-O2', '-pg', '-g', '-Iinclude', '-I.', 'benchmark/genetic_benchmark.cpp', 'src/genetic.cpp', 'src/node.cpp', 'src/philox_rng.cpp', 'src/program.cpp', '-o', '/home/poching2/fall26-cs598ape-mp2/results/profile-o2-stack-cancer/profile-binary']

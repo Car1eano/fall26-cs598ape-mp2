@@ -1,0 +1,9 @@
+{
+  "commit": "51324285ab91bd7b27998be74809728a1ce7c23e",
+  "mode": "valgrind",
+  "flags": "-std=c++17 -O2 -g -Wall -Wextra -I include -I.",
+  "datasets": [
+    "diabetes"
+  ],
+  "environment": {}
+}

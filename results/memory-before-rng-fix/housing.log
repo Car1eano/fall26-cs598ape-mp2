@@ -1,0 +1,9 @@
+include/custom_distributions.h:28:52: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+    #0 0x630544b47f11 in int uniform_int_distribution_custom<int>::operator()<PhiloxEngine>(PhiloxEngine&) include/custom_distributions.h:28
+    #1 0x630544b47f11 in genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) src/genetic.cpp:445
+    #2 0x630544af7cbf in run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) benchmark/genetic_benchmark.cpp:287
+    #3 0x630544a7002a in main benchmark/genetic_benchmark.cpp:682
+    #4 0x733f0422a600 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #5 0x733f0422a717 in __libc_start_main_impl ../csu/libc-start.c:360
+    #6 0x630544a70294 in _start (/home/poching2/fall26-cs598ape-mp2/results/memory-final-asan/source/genetic_benchmark+0x18f294) (BuildId: 373987b324b1d5f13251010d959d181f4782149c)
+

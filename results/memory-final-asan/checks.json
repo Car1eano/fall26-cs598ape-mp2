@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "diabetes",
+    "command": [
+      "./genetic_benchmark",
+      "diabetes"
+    ],
+    "returncode": 0
+  }
+]

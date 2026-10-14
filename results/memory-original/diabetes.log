@@ -1,0 +1,61 @@
+==19504== Memcheck, a memory error detector
+==19504== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==19504== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==19504== Command: ./genetic_benchmark diabetes
+==19504== 
+==19504== 
+==19504== HEAP SUMMARY:
+==19504==     in use at exit: 58,776 bytes in 91 blocks
+==19504==   total heap usage: 127,587 allocs, 127,496 frees, 7,603,848,222 bytes allocated
+==19504== 
+==19504== 56 bytes in 1 blocks are definitely lost in loss record 1 of 5
+==19504==    at 0x48875F3: operator new[](unsigned long) (vg_replace_malloc.c:730)
+==19504==    by 0x402A21A: genetic::build_program(genetic::program&, genetic::param const&, PhiloxEngine&) (program.cpp:338)
+==19504==    by 0x4024F16: genetic::cpp_evolve(std::vector<genetic::program, std::allocator<genetic::program> > const&, std::vector<genetic::program, std::allocator<genetic::program> >&, int, float const*, float const*, float const*, genetic::param const&, int, int) (genetic.cpp:109)
+==19504==    by 0x4025ECE: genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) (genetic.cpp:448)
+==19504==    by 0x401E4CF: run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (genetic_benchmark.cpp:286)
+==19504==    by 0x4006CB5: main (genetic_benchmark.cpp:677)
+==19504== 
+==19504== 744 bytes in 2 blocks are definitely lost in loss record 2 of 5
+==19504==    at 0x48875F3: operator new[](unsigned long) (vg_replace_malloc.c:730)
+==19504==    by 0x402928A: genetic::program::operator=(genetic::program const&) (program.cpp:77)
+==19504==    by 0x402970D: genetic::point_mutation(genetic::program const&, genetic::program&, genetic::param const&, PhiloxEngine&) (program.cpp:349)
+==19504==    by 0x40251CD: genetic::cpp_evolve(std::vector<genetic::program, std::allocator<genetic::program> > const&, std::vector<genetic::program, std::allocator<genetic::program> >&, int, float const*, float const*, float const*, genetic::param const&, int, int) (genetic.cpp:171)
+==19504==    by 0x4025ECE: genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) (genetic.cpp:448)
+==19504==    by 0x401E4CF: run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (genetic_benchmark.cpp:286)
+==19504==    by 0x4006CB5: main (genetic_benchmark.cpp:677)
+==19504== 
+==19504== 2,472 bytes in 6 blocks are definitely lost in loss record 3 of 5
+==19504==    at 0x48875F3: operator new[](unsigned long) (vg_replace_malloc.c:730)
+==19504==    by 0x402AC86: genetic::crossover(genetic::program const&, genetic::program const&, genetic::program&, genetic::param const&, PhiloxEngine&) (program.cpp:435)
+==19504==    by 0x402AE49: genetic::subtree_mutation(genetic::program const&, genetic::program&, genetic::param const&, PhiloxEngine&) (program.cpp:456)
+==19504==    by 0x402520D: genetic::cpp_evolve(std::vector<genetic::program, std::allocator<genetic::program> > const&, std::vector<genetic::program, std::allocator<genetic::program> >&, int, float const*, float const*, float const*, genetic::param const&, int, int) (genetic.cpp:165)
+==19504==    by 0x4025ECE: genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) (genetic.cpp:448)
+==19504==    by 0x401E4CF: run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (genetic_benchmark.cpp:286)
+==19504==    by 0x4006CB5: main (genetic_benchmark.cpp:677)
+==19504== 
+==19504== 6,584 bytes in 10 blocks are definitely lost in loss record 4 of 5
+==19504==    at 0x48875F3: operator new[](unsigned long) (vg_replace_malloc.c:730)
+==19504==    by 0x402928A: genetic::program::operator=(genetic::program const&) (program.cpp:77)
+==19504==    by 0x402518A: genetic::cpp_evolve(std::vector<genetic::program, std::allocator<genetic::program> > const&, std::vector<genetic::program, std::allocator<genetic::program> >&, int, float const*, float const*, float const*, genetic::param const&, int, int) (genetic.cpp:174)
+==19504==    by 0x4025ECE: genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) (genetic.cpp:448)
+==19504==    by 0x401E4CF: run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (genetic_benchmark.cpp:286)
+==19504==    by 0x4006CB5: main (genetic_benchmark.cpp:677)
+==19504== 
+==19504== 48,920 bytes in 72 blocks are definitely lost in loss record 5 of 5
+==19504==    at 0x48875F3: operator new[](unsigned long) (vg_replace_malloc.c:730)
+==19504==    by 0x402AC86: genetic::crossover(genetic::program const&, genetic::program const&, genetic::program&, genetic::param const&, PhiloxEngine&) (program.cpp:435)
+==19504==    by 0x4025256: genetic::cpp_evolve(std::vector<genetic::program, std::allocator<genetic::program> > const&, std::vector<genetic::program, std::allocator<genetic::program> >&, int, float const*, float const*, float const*, genetic::param const&, int, int) (genetic.cpp:162)
+==19504==    by 0x4025ECE: genetic::symFit(float const*, float const*, float const*, int, int, genetic::param&, genetic::program*&, std::vector<std::vector<genetic::program, std::allocator<genetic::program> >, std::allocator<std::vector<genetic::program, std::allocator<genetic::program> > > >&) (genetic.cpp:448)
+==19504==    by 0x401E4CF: run_symbolic_regression(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (genetic_benchmark.cpp:286)
+==19504==    by 0x4006CB5: main (genetic_benchmark.cpp:677)
+==19504== 
+==19504== LEAK SUMMARY:
+==19504==    definitely lost: 58,776 bytes in 91 blocks
+==19504==    indirectly lost: 0 bytes in 0 blocks
+==19504==      possibly lost: 0 bytes in 0 blocks
+==19504==    still reachable: 0 bytes in 0 blocks
+==19504==         suppressed: 0 bytes in 0 blocks
+==19504== 
+==19504== For lists of detected and suppressed errors, rerun with: -s
+==19504== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)

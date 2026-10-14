@@ -1,0 +1,26 @@
+[
+  {
+    "dataset": "diabetes",
+    "command": [
+      "./genetic_benchmark",
+      "diabetes"
+    ],
+    "returncode": 1
+  },
+  {
+    "dataset": "cancer",
+    "command": [
+      "./genetic_benchmark",
+      "cancer"
+    ],
+    "returncode": 1
+  },
+  {
+    "dataset": "housing",
+    "command": [
+      "./genetic_benchmark",
+      "housing"
+    ],
+    "returncode": 1
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "complete": true,
+  "variants": [
+    {
+      "label": "baseline",
+      "commit": "f19cc633664c9a333b208049770424d58d14909e",
+      "flags": "-std=c++17 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "o2",
+      "commit": "f19cc633664c9a333b208049770424d58d14909e",
+      "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "stack",
+      "commit": "f19cc633664c9a333b208049770424d58d14909e",
+      "flags": "-std=c++17 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "o2-stack",
+      "commit": "cbc92ec1dc9be1ffdf5284060e445c0de8b05a60",
+      "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "sorted",
+      "commit": "a150e4f6d14cdc957389d6dbb0b4571532932510",
+      "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "hoist-fixed",
+      "commit": "4850ad7fd0d80dad4d13c0e2ed585ce8f30c4012",
+      "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    },
+    {
+      "label": "final",
+      "commit": "51324285ab91bd7b27998be74809728a1ce7c23e",
+      "flags": "-std=c++17 -O2 -Wall -Wextra -I include -I.",
+      "total_runs": 12,
+      "warmups": 3,
+      "measured_runs": 9,
+      "source_hashes_verified": true,
+      "training_setup_matches_baseline": true,
+      "stdout_and_stderr_match_baseline": true
+    }
+  ],
+  "total_runs": 84,
+  "total_measured_runs": 63,
+  "existing_summary_verified": true,
+  "unit_tests": {
+    "passed": 11,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p benchmark_tools_test.py -v"
+  },
+  "charts_regenerated": false,
+  "limitations": [
+    "Three measured repeats per group; no claim of statistical significance.",
+    "Variants were measured in fixed order on a shared VM without CPU affinity.",
+    "Internal timing excludes final cleanup; wall timing includes it."
+  ]
+}
