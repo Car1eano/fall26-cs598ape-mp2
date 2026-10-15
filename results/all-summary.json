@@ -1,0 +1,408 @@
+{
+  "complete": true,
+  "workloads": [
+    {
+      "dataset": "diabetes",
+      "title": "Diabetes",
+      "kind": "CSV",
+      "baseline": {
+        "variant": "baseline",
+        "dataset": "diabetes",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 91 nodes",
+          ";;- Depth: 12",
+          ";;- Raw fitness: 6302.75",
+          ";;- Test MSE: 7468.95",
+          ";;- Length: 199 nodes",
+          ";;- Depth: 18",
+          ";;- Raw fitness: 6408.27",
+          ";;- Test MSE: 7217.17"
+        ],
+        "internal_seconds": {
+          "median": 21.22043538,
+          "min": 21.2112164,
+          "max": 21.649648933,
+          "mean": 21.360433571,
+          "sample_stdev": 0.2505102624856983
+        },
+        "wall_seconds": {
+          "median": 21.224956391999967,
+          "min": 21.216182924000123,
+          "max": 21.653998673999922,
+          "mean": 21.36504599666667,
+          "sample_stdev": 0.25027880601186886
+        },
+        "speedup": 1.0
+      },
+      "final": {
+        "variant": "final",
+        "dataset": "diabetes",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 91 nodes",
+          ";;- Depth: 12",
+          ";;- Raw fitness: 6302.75",
+          ";;- Test MSE: 7468.95",
+          ";;- Length: 199 nodes",
+          ";;- Depth: 18",
+          ";;- Raw fitness: 6408.27",
+          ";;- Test MSE: 7217.17"
+        ],
+        "internal_seconds": {
+          "median": 1.683897885,
+          "min": 1.682681962,
+          "max": 1.686903081,
+          "mean": 1.6844943093333333,
+          "sample_stdev": 0.00217284442427078
+        },
+        "wall_seconds": {
+          "median": 1.6879052379990753,
+          "min": 1.686747091000143,
+          "max": 1.6908731140010786,
+          "mean": 1.688508481000099,
+          "sample_stdev": 0.002128131349277008
+        },
+        "speedup": 12.601972820935043
+      },
+      "speedup": 12.601972820935043
+    },
+    {
+      "dataset": "cancer",
+      "title": "Cancer",
+      "kind": "CSV",
+      "baseline": {
+        "variant": "baseline",
+        "dataset": "cancer",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 20 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.15991",
+          ";;- Test accuracy: 0.946903",
+          ";;- Length: 20 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.15991",
+          ";;- Test accuracy: 0.946903"
+        ],
+        "internal_seconds": {
+          "median": 130.977298091,
+          "min": 130.797682031,
+          "max": 132.96519702,
+          "mean": 131.58005904733332,
+          "sample_stdev": 1.202921811567501
+        },
+        "wall_seconds": {
+          "median": 131.00274835000005,
+          "min": 130.82333034099997,
+          "max": 132.99128171199982,
+          "mean": 131.60578680099994,
+          "sample_stdev": 1.2032226796371879
+        },
+        "speedup": 1.0
+      },
+      "final": {
+        "variant": "final",
+        "dataset": "cancer",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 20 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.15991",
+          ";;- Test accuracy: 0.946903",
+          ";;- Length: 20 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.15991",
+          ";;- Test accuracy: 0.946903"
+        ],
+        "internal_seconds": {
+          "median": 13.449036724,
+          "min": 13.420057096,
+          "max": 13.71105784,
+          "mean": 13.52671722,
+          "sample_stdev": 0.16029988411175738
+        },
+        "wall_seconds": {
+          "median": 13.472023399001046,
+          "min": 13.442587433999506,
+          "max": 13.73423316499975,
+          "mean": 13.549614666000101,
+          "sample_stdev": 0.16056030530163956
+        },
+        "speedup": 9.738786559878234
+      },
+      "speedup": 9.738786559878234
+    },
+    {
+      "dataset": "housing",
+      "title": "Housing",
+      "kind": "CSV",
+      "baseline": {
+        "variant": "baseline",
+        "dataset": "housing",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 28 nodes",
+          ";;- Depth: 7",
+          ";;- Raw fitness: 0.659991",
+          ";;- Test MSE: 0.64586",
+          ";;- Length: 23 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.754433",
+          ";;- Test MSE: 0.728984"
+        ],
+        "internal_seconds": {
+          "median": 248.849643349,
+          "min": 247.14712055,
+          "max": 252.220775832,
+          "mean": 249.405846577,
+          "sample_stdev": 2.5821533655594093
+        },
+        "wall_seconds": {
+          "median": 248.8588843829998,
+          "min": 247.15625736699985,
+          "max": 252.23017053900003,
+          "mean": 249.41510409633324,
+          "sample_stdev": 2.5822827103891544
+        },
+        "speedup": 1.0
+      },
+      "final": {
+        "variant": "final",
+        "dataset": "housing",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";;- Length: 28 nodes",
+          ";;- Depth: 7",
+          ";;- Raw fitness: 0.659991",
+          ";;- Test MSE: 0.64586",
+          ";;- Length: 23 nodes",
+          ";;- Depth: 5",
+          ";;- Raw fitness: 0.754433",
+          ";;- Test MSE: 0.728984"
+        ],
+        "internal_seconds": {
+          "median": 24.8088182,
+          "min": 24.794668964,
+          "max": 24.872052843,
+          "mean": 24.825180002333333,
+          "sample_stdev": 0.04120494647451811
+        },
+        "wall_seconds": {
+          "median": 24.814919458998702,
+          "min": 24.80077142799928,
+          "max": 24.878189774999555,
+          "mean": 24.831293553999178,
+          "sample_stdev": 0.04122479051950715
+        },
+        "speedup": 10.030693173002492
+      },
+      "speedup": 10.030693173002492
+    },
+    {
+      "dataset": "silk-wave",
+      "title": "Silk waves",
+      "kind": "Image",
+      "baseline": {
+        "variant": "silk-baseline",
+        "dataset": "silk-wave",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";; red model 0, seed 2025000000, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; red model 1, seed 2025000001, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; red model 2, seed 2025000002, training MSE 0.103212692, test MSE 0.103396416, nodes 1",
+          ";; red averaged test MSE: 0.011492081",
+          ";; green model 0, seed 2025000003, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green model 1, seed 2025000004, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green model 2, seed 2025000005, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green averaged test MSE: 1.1292957e-06",
+          ";; blue model 0, seed 2025000006, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue model 1, seed 2025000007, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue model 2, seed 2025000008, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue averaged test MSE: 0.0716654807",
+          ";; RGB averaged test MSE (before display clamping): 0.0277195631"
+        ],
+        "internal_seconds": {
+          "median": 426.405388921,
+          "min": 411.228910135,
+          "max": 427.364091879,
+          "mean": 421.6661303116667,
+          "sample_stdev": 9.051599394724835
+        },
+        "wall_seconds": {
+          "median": 426.42107331700026,
+          "min": 411.2448062809999,
+          "max": 427.3797064790051,
+          "mean": 421.6818620256684,
+          "sample_stdev": 9.051455344187056
+        }
+      },
+      "final": {
+        "variant": "silk-final-repeat",
+        "dataset": "silk-wave",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";; red model 0, seed 2025000000, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; red model 1, seed 2025000001, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; red model 2, seed 2025000002, training MSE 0.103212692, test MSE 0.103396416, nodes 1",
+          ";; red averaged test MSE: 0.011492081",
+          ";; green model 0, seed 2025000003, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green model 1, seed 2025000004, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green model 2, seed 2025000005, training MSE 1.12919929e-06, test MSE 1.12930456e-06, nodes 3",
+          ";; green averaged test MSE: 1.1292957e-06",
+          ";; blue model 0, seed 2025000006, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue model 1, seed 2025000007, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue model 2, seed 2025000008, training MSE 0.0716455206, test MSE 0.0716654807, nodes 8",
+          ";; blue averaged test MSE: 0.0716654807",
+          ";; RGB averaged test MSE (before display clamping): 0.0277195631"
+        ],
+        "internal_seconds": {
+          "median": 38.585800483,
+          "min": 38.552210733,
+          "max": 38.845671747,
+          "mean": 38.66122765433333,
+          "sample_stdev": 0.16061377685611933
+        },
+        "wall_seconds": {
+          "median": 38.594896414999994,
+          "min": 38.56157772399999,
+          "max": 38.85474022299999,
+          "mean": 38.670404787333325,
+          "sample_stdev": 0.16050606974287196
+        }
+      },
+      "speedup": 11.05083692921867
+    },
+    {
+      "dataset": "square-wave",
+      "title": "Square waves",
+      "kind": "Image",
+      "baseline": {
+        "variant": "square-baseline",
+        "dataset": "square-wave",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";; red model 0, seed 2025000000, training MSE 0.0672579929, test MSE 0.0672820359, nodes 13",
+          ";; red model 1, seed 2025000001, training MSE 0.0672579929, test MSE 0.0672820359, nodes 13",
+          ";; red model 2, seed 2025000002, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 5",
+          ";; red model 3, seed 2025000003, training MSE 0.0719193071, test MSE 0.0719399005, nodes 9",
+          ";; red model 4, seed 2025000004, training MSE 0.0065403902, test MSE 0.00654041953, nodes 6",
+          ";; red model 5, seed 2025000005, training MSE 0.0065403902, test MSE 0.00654041953, nodes 6",
+          ";; red model 6, seed 2025000006, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 10",
+          ";; red model 7, seed 2025000007, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 10",
+          ";; red averaged test MSE: 0.0117983688",
+          ";; green model 0, seed 2025000008, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 5",
+          ";; green model 1, seed 2025000009, training MSE 0.103191391, test MSE 0.103386186, nodes 3",
+          ";; green model 2, seed 2025000010, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; green model 3, seed 2025000011, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 5",
+          ";; green model 4, seed 2025000012, training MSE 0.103192903, test MSE 0.103384219, nodes 2",
+          ";; green model 5, seed 2025000013, training MSE 0.103192903, test MSE 0.103384219, nodes 2",
+          ";; green model 6, seed 2025000014, training MSE 0.103201933, test MSE 0.103388049, nodes 1",
+          ";; green model 7, seed 2025000015, training MSE 0.103201933, test MSE 0.103388049, nodes 1",
+          ";; green averaged test MSE: 0.0403880812",
+          ";; blue model 0, seed 2025000016, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 1, seed 2025000017, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 2, seed 2025000018, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 6",
+          ";; blue model 3, seed 2025000019, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 5",
+          ";; blue model 4, seed 2025000020, training MSE 0.00138308934, test MSE 0.00138233765, nodes 9",
+          ";; blue model 5, seed 2025000021, training MSE 0.00138308934, test MSE 0.00138233765, nodes 9",
+          ";; blue model 6, seed 2025000022, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 7, seed 2025000023, training MSE 0.0177459922, test MSE 0.0177460909, nodes 7",
+          ";; blue averaged test MSE: 0.00037665994",
+          ";; RGB averaged test MSE (before display clamping): 0.0175210362"
+        ],
+        "internal_seconds": {
+          "median": 1319.583603495,
+          "min": 1275.788323812,
+          "max": 1319.916827473,
+          "mean": 1305.0962515933334,
+          "sample_stdev": 25.381956833186948
+        },
+        "wall_seconds": {
+          "median": 1319.599207791,
+          "min": 1275.8038888410001,
+          "max": 1319.9321687529996,
+          "mean": 1305.1117551283332,
+          "sample_stdev": 25.381902716063312
+        }
+      },
+      "final": {
+        "variant": "square-final",
+        "dataset": "square-wave",
+        "n": 3,
+        "equivalent_output": true,
+        "quality": [
+          ";; red model 0, seed 2025000000, training MSE 0.0672579929, test MSE 0.0672820359, nodes 13",
+          ";; red model 1, seed 2025000001, training MSE 0.0672579929, test MSE 0.0672820359, nodes 13",
+          ";; red model 2, seed 2025000002, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 5",
+          ";; red model 3, seed 2025000003, training MSE 0.0719193071, test MSE 0.0719399005, nodes 9",
+          ";; red model 4, seed 2025000004, training MSE 0.0065403902, test MSE 0.00654041953, nodes 6",
+          ";; red model 5, seed 2025000005, training MSE 0.0065403902, test MSE 0.00654041953, nodes 6",
+          ";; red model 6, seed 2025000006, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 10",
+          ";; red model 7, seed 2025000007, training MSE 1.10986286e-06, test MSE 1.11017437e-06, nodes 10",
+          ";; red averaged test MSE: 0.0117983688",
+          ";; green model 0, seed 2025000008, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 5",
+          ";; green model 1, seed 2025000009, training MSE 0.103191391, test MSE 0.103386186, nodes 3",
+          ";; green model 2, seed 2025000010, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 6",
+          ";; green model 3, seed 2025000011, training MSE 1.28652255e-06, test MSE 1.27824501e-06, nodes 5",
+          ";; green model 4, seed 2025000012, training MSE 0.103192903, test MSE 0.103384219, nodes 2",
+          ";; green model 5, seed 2025000013, training MSE 0.103192903, test MSE 0.103384219, nodes 2",
+          ";; green model 6, seed 2025000014, training MSE 0.103201933, test MSE 0.103388049, nodes 1",
+          ";; green model 7, seed 2025000015, training MSE 0.103201933, test MSE 0.103388049, nodes 1",
+          ";; green averaged test MSE: 0.0403880812",
+          ";; blue model 0, seed 2025000016, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 1, seed 2025000017, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 2, seed 2025000018, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 6",
+          ";; blue model 3, seed 2025000019, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 5",
+          ";; blue model 4, seed 2025000020, training MSE 0.00138308934, test MSE 0.00138233765, nodes 9",
+          ";; blue model 5, seed 2025000021, training MSE 0.00138308934, test MSE 0.00138233765, nodes 9",
+          ";; blue model 6, seed 2025000022, training MSE 1.10986559e-06, test MSE 1.11016709e-06, nodes 7",
+          ";; blue model 7, seed 2025000023, training MSE 0.0177459922, test MSE 0.0177460909, nodes 7",
+          ";; blue averaged test MSE: 0.00037665994",
+          ";; RGB averaged test MSE (before display clamping): 0.0175210362"
+        ],
+        "internal_seconds": {
+          "median": 120.480953265,
+          "min": 120.272842513,
+          "max": 120.5540896,
+          "mean": 120.43596179266666,
+          "sample_stdev": 0.14592174417658488
+        },
+        "wall_seconds": {
+          "median": 120.4904442269999,
+          "min": 120.28208313399955,
+          "max": 120.56376782200005,
+          "mean": 120.4454317276665,
+          "sample_stdev": 0.1461374684523573
+        }
+      },
+      "speedup": 10.952632492810315
+    }
+  ],
+  "csv_stages": [
+    "baseline",
+    "o2",
+    "stack",
+    "o2-stack",
+    "sorted",
+    "hoist-fixed",
+    "final"
+  ],
+  "total_runs": 100,
+  "measured_runs": 75,
+  "warmup_runs": 25,
+  "repeat_counts": [
+    3
+  ],
+  "statistic": "Median of measured internal times; warmups excluded; measured repeats per group: [3]",
+  "limitations": "Shared VM; batches not interleaved; image stages are baseline and combined final only. Rendering and diagnostic times excluded."
+}

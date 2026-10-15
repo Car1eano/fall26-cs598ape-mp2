@@ -370,5 +370,284 @@
       "sample_stdev": 0.17572896798578413
     },
     "speedup": 9.988743675202782
+  },
+  {
+    "variant": "sorted",
+    "dataset": "diabetes",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ],
+    "internal_seconds": {
+      "median": 1.691999254,
+      "min": 1.680149366,
+      "max": 1.705103763,
+      "mean": 1.692417461,
+      "sample_stdev": 0.012482453894548965
+    },
+    "wall_seconds": {
+      "median": 1.6960928999997122,
+      "min": 1.6840952649999963,
+      "max": 1.7096821909999562,
+      "mean": 1.6966234519998882,
+      "sample_stdev": 0.01280171119813771
+    },
+    "speedup": 12.541634004762985
+  },
+  {
+    "variant": "sorted",
+    "dataset": "cancer",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ],
+    "internal_seconds": {
+      "median": 13.292134995,
+      "min": 13.278873168,
+      "max": 13.572349702,
+      "mean": 13.381119288333334,
+      "sample_stdev": 0.16574309140108334
+    },
+    "wall_seconds": {
+      "median": 13.315334144999724,
+      "min": 13.301602342000479,
+      "max": 13.595165848999386,
+      "mean": 13.404034111999863,
+      "sample_stdev": 0.16566727579622864
+    },
+    "speedup": 9.853744198375109
+  },
+  {
+    "variant": "sorted",
+    "dataset": "housing",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ],
+    "internal_seconds": {
+      "median": 24.744081003,
+      "min": 24.655388633,
+      "max": 24.752755972,
+      "mean": 24.717408536,
+      "sample_stdev": 0.053885666441872454
+    },
+    "wall_seconds": {
+      "median": 24.750447772999905,
+      "min": 24.661508372000753,
+      "max": 24.758719352999833,
+      "mean": 24.723558499333496,
+      "sample_stdev": 0.05389590416192219
+    },
+    "speedup": 10.05693617470898
+  },
+  {
+    "variant": "hoist-fixed",
+    "dataset": "diabetes",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ],
+    "internal_seconds": {
+      "median": 1.70347719,
+      "min": 1.699803158,
+      "max": 1.71583491,
+      "mean": 1.7063717526666666,
+      "sample_stdev": 0.00839869857899559
+    },
+    "wall_seconds": {
+      "median": 1.7078763200006506,
+      "min": 1.703961810999317,
+      "max": 1.720023873998798,
+      "mean": 1.710620668332922,
+      "sample_stdev": 0.008375324040086708
+    },
+    "speedup": 12.45712916179406
+  },
+  {
+    "variant": "hoist-fixed",
+    "dataset": "cancer",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ],
+    "internal_seconds": {
+      "median": 13.440291576,
+      "min": 13.425157973,
+      "max": 13.455840557,
+      "mean": 13.440430035333334,
+      "sample_stdev": 0.015341760605273376
+    },
+    "wall_seconds": {
+      "median": 13.462491334999868,
+      "min": 13.447258718999365,
+      "max": 13.478818221001347,
+      "mean": 13.46285609166686,
+      "sample_stdev": 0.01578291250761009
+    },
+    "speedup": 9.745123262421103
+  },
+  {
+    "variant": "hoist-fixed",
+    "dataset": "housing",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ],
+    "internal_seconds": {
+      "median": 24.844210317,
+      "min": 24.799792586,
+      "max": 24.853535709,
+      "mean": 24.832512870666665,
+      "sample_stdev": 0.028717651461935955
+    },
+    "wall_seconds": {
+      "median": 24.850421376000668,
+      "min": 24.80586979600048,
+      "max": 24.859791471999415,
+      "mean": 24.838694214666855,
+      "sample_stdev": 0.028810267620164955
+    },
+    "speedup": 10.016403829053125
+  },
+  {
+    "variant": "final",
+    "dataset": "diabetes",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 91 nodes",
+      ";;- Depth: 12",
+      ";;- Raw fitness: 6302.75",
+      ";;- Test MSE: 7468.95",
+      ";;- Length: 199 nodes",
+      ";;- Depth: 18",
+      ";;- Raw fitness: 6408.27",
+      ";;- Test MSE: 7217.17"
+    ],
+    "internal_seconds": {
+      "median": 1.683897885,
+      "min": 1.682681962,
+      "max": 1.686903081,
+      "mean": 1.6844943093333333,
+      "sample_stdev": 0.00217284442427078
+    },
+    "wall_seconds": {
+      "median": 1.6879052379990753,
+      "min": 1.686747091000143,
+      "max": 1.6908731140010786,
+      "mean": 1.688508481000099,
+      "sample_stdev": 0.002128131349277008
+    },
+    "speedup": 12.601972820935043
+  },
+  {
+    "variant": "final",
+    "dataset": "cancer",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903",
+      ";;- Length: 20 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.15991",
+      ";;- Test accuracy: 0.946903"
+    ],
+    "internal_seconds": {
+      "median": 13.449036724,
+      "min": 13.420057096,
+      "max": 13.71105784,
+      "mean": 13.52671722,
+      "sample_stdev": 0.16029988411175738
+    },
+    "wall_seconds": {
+      "median": 13.472023399001046,
+      "min": 13.442587433999506,
+      "max": 13.73423316499975,
+      "mean": 13.549614666000101,
+      "sample_stdev": 0.16056030530163956
+    },
+    "speedup": 9.738786559878234
+  },
+  {
+    "variant": "final",
+    "dataset": "housing",
+    "n": 3,
+    "equivalent_output": true,
+    "quality": [
+      ";;- Length: 28 nodes",
+      ";;- Depth: 7",
+      ";;- Raw fitness: 0.659991",
+      ";;- Test MSE: 0.64586",
+      ";;- Length: 23 nodes",
+      ";;- Depth: 5",
+      ";;- Raw fitness: 0.754433",
+      ";;- Test MSE: 0.728984"
+    ],
+    "internal_seconds": {
+      "median": 24.8088182,
+      "min": 24.794668964,
+      "max": 24.872052843,
+      "mean": 24.825180002333333,
+      "sample_stdev": 0.04120494647451811
+    },
+    "wall_seconds": {
+      "median": 24.814919458998702,
+      "min": 24.80077142799928,
+      "max": 24.878189774999555,
+      "mean": 24.831293553999178,
+      "sample_stdev": 0.04122479051950715
+    },
+    "speedup": 10.030693173002492
   }
 ]

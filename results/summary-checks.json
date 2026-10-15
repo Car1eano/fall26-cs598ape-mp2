@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "tool_tests_passed": 17,
+  "total_runs_checked": 100,
+  "measured_runs": 75,
+  "warmups": 25,
+  "csv_stages": 7,
+  "workloads": 5,
+  "statistics_recomputed_from_runs_json": true,
+  "source_files": {
+    "tools/summarize.py": "c95a71e44102c27956b8116434362f4c13ce9f2f727ce2a45dfe76117c719ac9",
+    "tools/summarize_all.py": "7584e4d11cf3fd140d188a566060256288d82444936be2a6f36f39ed58b5ab3d",
+    "tests/image_summary_test.py": "e6a66a43351ab2bfd1d2fabfdbe01fc215475db7840561b533e19e91cb6fb51e"
+  }
+}

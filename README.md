@@ -11,6 +11,8 @@ Full environment records are in [results/environment](results/environment).
 Build, run and benchmark commands, changes and pending checks are listed below.
 Saved statistics and charts: [results table](results/summary.md),
 [runtime](results/runtime.png), [speedup](results/speedup.png).
+Five-workload overview: [table](results/all-summary.md),
+[runtime](results/all-runtime.png), [speedup](results/all-speedup.png).
 
 | Change | Commit | Recorded experiment |
 |---|---|---|
@@ -74,6 +76,8 @@ Plotting requires Python with the packages in `tools/plot-requirements.txt`:
 python3 -m venv /tmp/mp2-plots
 /tmp/mp2-plots/bin/pip install -r tools/plot-requirements.txt
 /tmp/mp2-plots/bin/python tools/summarize.py baseline o2 stack o2-stack sorted hoist-fixed final
+# Regenerate all saved CSV/image tables and figures after checking their records:
+/tmp/mp2-plots/bin/python tools/summarize_all.py
 ```
 
 If system Python lacks `venv`/`ensurepip`, install `python3-venv` or use
@@ -82,6 +86,18 @@ The summary checks raw output hashes, recorded timings, repeat counts, dataset
 hashes and baseline output with timing lines removed before writing tables or
 standalone PNG/SVG charts. Invalid or inconsistent batches are rejected before
 existing artifacts are changed.
+The CSV figures include all seven recorded stages. The overview compares
+baseline with final for all five workloads; intermediate image stages were not
+measured. Bars show medians; runtime whiskers show the observed min–max, not a
+confidence interval. Both PNG and SVG versions are saved. All 100 runs were
+checked (75 measured runs and 25 warmups). Tool checks can be repeated with:
+
+```bash
+python3 -m unittest discover -s tests -p '*_test.py'
+```
+
+These commands validate saved records and regenerate figures; they do not rerun
+training. Use the benchmark commands above and below to collect new timings.
 
 For hotspot evidence and independent correctness checks:
 
@@ -120,8 +136,8 @@ three datasets, and final Diabetes Valgrind reported zero errors and zero bytes
 in use at exit. Completed checks and output comparisons are recorded in
 `results/task2-checks.json`. Logs are in `results/memory-final-asan`,
 `results/memory-task2-asan` and `results/memory-task2-valgrind`.
-Saved charts cover the first four stages; later stages have raw records but have
-not been added to those charts.
+Saved CSV charts cover all seven stages. Five-workload tables and charts also
+include both image benchmarks.
 
 Silk waves baseline records are in `results/silk-baseline`: one warmup and three
 measured runs, with unchanged formulas and quality across repeats. Measured
