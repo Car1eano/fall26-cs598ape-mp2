@@ -12,19 +12,20 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASETS = ['diabetes', 'cancer', 'housing']
 
 
-def load_runs(directory):
+def load_runs(directory, datasets=None):
+    datasets = DATASETS if datasets is None else datasets
     metadata = json.loads((directory / 'metadata.json').read_text())
     repeats = metadata['repeats']
     if type(repeats) is not int or repeats < 3 or metadata['warmups'] != 1:
         raise ValueError(f'{directory.name}: need one warmup and at least three repeats')
-    if sorted(metadata['datasets']) != sorted(DATASETS):
-        raise ValueError(f'{directory.name}: expected all three CSV datasets')
+    if sorted(metadata['datasets']) != sorted(datasets):
+        raise ValueError(f'{directory.name}: unexpected dataset list')
     if '-pg' in metadata['flags'].split() or '-fsanitize=' in metadata['flags']:
         raise ValueError(f'{directory.name}: instrumented runs are not performance measurements')
     rows = json.loads((directory / 'runs.json').read_text())
-    if len(rows) != len(DATASETS) * (repeats + 1):
+    if len(rows) != len(datasets) * (repeats + 1):
         raise ValueError(f'{directory.name}: incomplete or extra run records')
-    for dataset in DATASETS:
+    for dataset in datasets:
         group = [r for r in rows if r['dataset'] == dataset]
         if sorted(r['run'] for r in group) != list(range(repeats + 1)):
             raise ValueError(f'{directory.name}/{dataset}: missing or duplicate run IDs')
@@ -47,7 +48,8 @@ def load_runs(directory):
             if row['wall_seconds'] < row['internal_seconds']:
                 raise ValueError(f'{directory.name}/{stem}: wall time precedes internal time')
             quality = [line for line in output.splitlines() if line.startswith(';;-')]
-            if quality != row['quality'] or len(quality) != 8:
+            expected_count = 8 if dataset in DATASETS else 0
+            if quality != row['quality'] or len(quality) != expected_count:
                 raise ValueError(f'{directory.name}/{stem}: quality record mismatch')
             row['_stderr'] = (directory / (stem + '.stderr')).read_text()
         warmup = next(r for r in group if r['run'] == 0)
@@ -118,7 +120,7 @@ def main():
     import numpy as np
     for metric, filename, ylabel in [('internal_seconds', 'runtime.png', 'Internal end-to-end time (seconds; log scale)'),
                                     ('speedup', 'speedup.png', 'Speedup relative to baseline')]:
-        fig, ax = plt.subplots(figsize=(10, 5), layout='constrained')
+        fig, ax = plt.subplots(figsize=(13, 5.5), layout='constrained')
         width = 0.8 / len(a.labels)
         x = np.arange(len(DATASETS))
         for index, label in enumerate(a.labels):
@@ -129,7 +131,7 @@ def main():
                 errors = [[r[metric]['median'] - r[metric]['min'] for r in group],
                           [r[metric]['max'] - r[metric]['median'] for r in group]]
             bars = ax.bar(x - 0.4 + width / 2 + index * width, values, width, label=label, yerr=errors, capsize=3)
-            ax.bar_label(bars, fmt='%.2f', fontsize=8, padding=3)
+            ax.bar_label(bars, fmt='%.2f', fontsize=7, padding=3, rotation=90)
         if metric == 'internal_seconds':
             ax.set_yscale('log')
         ax.set_xticks(x, ['Diabetes', 'Cancer', 'Housing'])
@@ -139,6 +141,7 @@ def main():
                      ('n=' + str(counts[0]) if len(counts) == 1 else 'repeat counts vary') + ')')
         ax.grid(axis='y', alpha=0.2)
         ax.set_axisbelow(True)
+        ax.margins(y=0.22)
         fig.savefig(dest / filename, dpi=160)
         fig.savefig(dest / filename.replace('.png', '.svg'))
         plt.close(fig)
