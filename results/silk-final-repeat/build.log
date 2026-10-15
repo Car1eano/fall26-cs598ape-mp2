@@ -1,0 +1,42 @@
+Compiling src/genetic.cpp...
+Compiling src/node.cpp...
+Compiling src/philox_rng.cpp...
+src/genetic.cpp: In function ‘void genetic::symFit(const float*, const float*, const float*, int, int, param&, program*&, std::vector<std::vector<program> >&)’:
+src/genetic.cpp:396:70: warning: unused parameter ‘n_cols’ [-Wunused-parameter]
+  396 |             const float *sample_weights, const int n_rows, const int n_cols,
+      |                                                            ~~~~~~~~~~^~~~~~
+src/genetic.cpp: In function ‘void genetic::symTransform(const float*, const param&, program* const&, int, int, float*)’:
+src/genetic.cpp:543:29: warning: unused parameter ‘n_cols’ [-Wunused-parameter]
+  543 |                   const int n_cols, float *output) {
+      |                   ~~~~~~~~~~^~~~~~
+Compiling src/program.cpp...
+In file included from src/program.cpp:11:
+include/program.h: In constructor ‘genetic::program::program()’:
+include/program.h:62:14: warning: ‘genetic::program::mut_type’ will be initialized after [-Wreorder]
+   62 |   mutation_t mut_type;
+      |              ^~~~~~~~
+include/program.h:52:9: warning:   ‘genetic::node* genetic::program::nodes’ [-Wreorder]
+   52 |   node *nodes;
+      |         ^~~~~
+src/program.cpp:55:1: warning:   when initialized here [-Wreorder]
+   55 | program::program()
+      | ^~~~~~~
+src/program.cpp: In function ‘void genetic::crossover(const program&, const program&, program&, const param&, PhiloxEngine&)’:
+src/program.cpp:397:29: warning: unused parameter ‘params’ [-Wunused-parameter]
+  397 |                const param &params, PhiloxEngine &rng) {
+      |                ~~~~~~~~~~~~~^~~~~~
+src/program.cpp: In function ‘void genetic::hoist_mutation(const program&, program&, const param&, PhiloxEngine&)’:
+src/program.cpp:459:71: warning: unused parameter ‘params’ [-Wunused-parameter]
+  459 | void hoist_mutation(const program &prog, program &p_out, const param &params,
+      |                                                          ~~~~~~~~~~~~~^~~~~~
+In file included from src/program.cpp:8:
+include/fitness.h: In function ‘void genetic::weightedPearson(uint64_t, uint64_t, const math_t*, const math_t*, const math_t*, math_t*) [with math_t = float]’:
+include/fitness.h:24:10: warning: ‘y_mu’ may be used uninitialized [-Wmaybe-uninitialized]
+   24 |   math_t y_mu;                       // output mean
+      |          ^~~~
+Building benchmark program...
+In file included from benchmark/genetic_benchmark.cpp:23:
+include/ctimer.h: In function ‘void ctimer_reset(ctimer_t*)’:
+include/ctimer.h:359:37: warning: missing initializer for member ‘timespec::tv_nsec’ [-Wmissing-field-initializers]
+  359 |     t->elapsed = (struct timespec){0};
+      |                                     ^

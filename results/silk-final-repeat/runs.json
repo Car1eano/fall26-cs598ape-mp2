@@ -1,0 +1,46 @@
+[
+  {
+    "dataset": "silk-wave",
+    "run": 0,
+    "warmup": true,
+    "returncode": 0,
+    "wall_seconds": 38.530797744000004,
+    "internal_seconds": 38.521674914,
+    "output_sha256": "2627e181793462b77c70f2d73041165abcc3b69c8a5395b4271cf1219dd20d2a",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "silk-wave",
+    "run": 1,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 38.85474022299999,
+    "internal_seconds": 38.845671747,
+    "output_sha256": "2627e181793462b77c70f2d73041165abcc3b69c8a5395b4271cf1219dd20d2a",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "silk-wave",
+    "run": 2,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 38.594896414999994,
+    "internal_seconds": 38.585800483,
+    "output_sha256": "2627e181793462b77c70f2d73041165abcc3b69c8a5395b4271cf1219dd20d2a",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "silk-wave",
+    "run": 3,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 38.56157772399999,
+    "internal_seconds": 38.552210733,
+    "output_sha256": "2627e181793462b77c70f2d73041165abcc3b69c8a5395b4271cf1219dd20d2a",
+    "matches_warmup": true,
+    "quality": []
+  }
+]

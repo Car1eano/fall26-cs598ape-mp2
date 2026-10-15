@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "silk-wave",
+    "command": [
+      "./genetic_benchmark",
+      "silk-wave"
+    ],
+    "returncode": 0
+  }
+]
