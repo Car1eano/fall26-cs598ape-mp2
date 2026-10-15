@@ -1,0 +1,11 @@
+baseline diabetes 21.544s output matched
+baseline cancer 131.039s output matched
+baseline housing 252.222s output matched
+baseline silk-wave 409.931s output matched
+baseline square-wave 1319.555s output matched
+final diabetes 1.709s output matched
+final cancer 13.492s output matched
+final housing 24.887s output matched
+final silk-wave 38.127s output matched
+final square-wave 120.246s output matched
+Clean checkout verification passed.

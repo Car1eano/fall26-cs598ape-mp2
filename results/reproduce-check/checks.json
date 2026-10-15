@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "snapshot_commit": "f03db9bc0a12826b61a97675fe6491e65188646e",
+  "scope": "Clean checkout and new Python environment on the existing VM; system packages shared",
+  "warmups": 0,
+  "runs_per_version_and_workload": 1,
+  "workload_runs": 10,
+  "all_outputs_match_saved_baseline": true,
+  "all_image_pngs_match_saved": true,
+  "python_tool_tests_passed": 17,
+  "cpp_sanitizer_tests_passed": 5,
+  "saved_statistics_regenerated_identically": true,
+  "gprof_smoke_passed": true,
+  "valgrind_smoke_passed": true,
+  "perf_returncode": 1,
+  "included_in_performance_statistics": false,
+  "temporary_files_removed": true,
+  "single_run_speedups": {
+    "diabetes": 12.607844709379298,
+    "cancer": 9.712582059242264,
+    "housing": 10.134616429275022,
+    "silk-wave": 10.751704609534311,
+    "square-wave": 10.973789803694192
+  },
+  "default_make_build_passed": true,
+  "default_binary_matches_explicit_flag_binary": true
+}

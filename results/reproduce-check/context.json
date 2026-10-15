@@ -1,0 +1,9 @@
+{
+  "snapshot_commit": "f03db9bc0a12826b61a97675fe6491e65188646e",
+  "temporary_root": "/tmp/mp2-reproduce-jls7f5y5",
+  "repo": "/tmp/mp2-reproduce-jls7f5y5/repo",
+  "venv": "/tmp/mp2-reproduce-jls7f5y5/venv",
+  "standard_venv_returncode": 1,
+  "clean_checkout_verified": true,
+  "recorded_utc": "2026-10-15T01:06:19.920311+00:00"
+}

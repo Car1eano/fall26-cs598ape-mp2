@@ -1,0 +1,99 @@
+[
+  {
+    "test": "stack",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/include",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/tests/stack_test.cpp",
+      "-o",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-unit-checks/stack-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "evaluation",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/include",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/tests/evaluation_test.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/genetic.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/node.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/philox_rng.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-unit-checks/evaluation-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "sorting",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/include",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/tests/sorting_test.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/genetic.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/node.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/philox_rng.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-unit-checks/sorting-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "mutation_memory",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/include",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/tests/mutation_memory_test.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/genetic.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/node.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/philox_rng.cpp",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/src/program.cpp",
+      "-o",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-unit-checks/mutation_memory-test"
+    ],
+    "returncode": 0
+  },
+  {
+    "test": "distributions",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source/include",
+      "-I/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/tests/distributions_test.cpp",
+      "-o",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-unit-checks/distributions-test"
+    ],
+    "returncode": 0
+  }
+]

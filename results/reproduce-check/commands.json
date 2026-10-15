@@ -1,0 +1,265 @@
+[
+  {
+    "command": [
+      "/tmp/mp2-reproduce-jls7f5y5/venv/bin/python",
+      "-c",
+      "import sys, json, importlib.metadata as m; print(json.dumps({\"python\":sys.version,\"packages\":{d.metadata[\"Name\"]:d.version for d in m.distributions()}},indent=2))"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "python-environment.json"
+  },
+  {
+    "command": [
+      "/tmp/mp2-reproduce-jls7f5y5/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "*_test.py"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "python-tests.log"
+  },
+  {
+    "command": [
+      "/tmp/mp2-reproduce-jls7f5y5/venv/bin/python",
+      "tools/summarize_all.py"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "plots.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "log": "baseline/clean.log"
+  },
+  {
+    "command": [
+      "make",
+      "-j2",
+      "CXXFLAGS=-std=c++17 -Wall -Wextra -I include -I."
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "log": "baseline/build.log"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "diabetes"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "stdout": "baseline/diabetes.rkt",
+    "stderr": "baseline/diabetes.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "cancer"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "stdout": "baseline/cancer.rkt",
+    "stderr": "baseline/cancer.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "housing"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "stdout": "baseline/housing.rkt",
+    "stderr": "baseline/housing.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "silk-wave"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "stdout": "baseline/silk-wave.rkt",
+    "stderr": "baseline/silk-wave.stderr"
+  },
+  {
+    "command": [
+      "racket",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/baseline/silk-wave.rkt",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/baseline/silk-wave.png"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "log": "baseline/silk-wave-render.log"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "square-wave"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "stdout": "baseline/square-wave.rkt",
+    "stderr": "baseline/square-wave.stderr"
+  },
+  {
+    "command": [
+      "racket",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/baseline/square-wave.rkt",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/baseline/square-wave.png"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-baseline/source",
+    "log": "baseline/square-wave-render.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "log": "final/clean.log"
+  },
+  {
+    "command": [
+      "make",
+      "-j2",
+      "CXXFLAGS=-std=c++17 -O2 -Wall -Wextra -I include -I."
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "log": "final/build.log"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "diabetes"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "stdout": "final/diabetes.rkt",
+    "stderr": "final/diabetes.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "cancer"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "stdout": "final/cancer.rkt",
+    "stderr": "final/cancer.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "housing"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "stdout": "final/housing.rkt",
+    "stderr": "final/housing.stderr"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "silk-wave"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "stdout": "final/silk-wave.rkt",
+    "stderr": "final/silk-wave.stderr"
+  },
+  {
+    "command": [
+      "racket",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/final/silk-wave.rkt",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/final/silk-wave.png"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "log": "final/silk-wave-render.log"
+  },
+  {
+    "command": [
+      "./genetic_benchmark",
+      "square-wave"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "stdout": "final/square-wave.rkt",
+    "stderr": "final/square-wave.stderr"
+  },
+  {
+    "command": [
+      "racket",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/final/square-wave.rkt",
+      "/home/poching2/fall26-cs598ape-mp2/results/reproduce-check/final/square-wave.png"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+    "log": "final/square-wave-render.log"
+  },
+  {
+    "command": [
+      "/tmp/mp2-reproduce-jls7f5y5/venv/bin/python",
+      "tools/check.py",
+      "--source",
+      "/tmp/mp2-reproduce-jls7f5y5/repo/results/verify-final/source",
+      "--label",
+      "verify-unit-checks",
+      "--sanitize",
+      "--sorting",
+      "--mutations",
+      "--distributions"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "cpp-tests.log"
+  },
+  {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-g",
+      "-pg",
+      "smoke.cpp",
+      "-o",
+      "smoke"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/smoke",
+    "log": "smoke-build.log"
+  },
+  {
+    "command": [
+      "./smoke"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/smoke",
+    "log": "smoke-run.log"
+  },
+  {
+    "command": [
+      "gprof",
+      "smoke",
+      "gmon.out"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/smoke",
+    "log": "gprof-smoke.log"
+  },
+  {
+    "command": [
+      "valgrind",
+      "--leak-check=full",
+      "--error-exitcode=99",
+      "./smoke"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/smoke",
+    "log": "valgrind-smoke.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "default-clean.log"
+  },
+  {
+    "command": [
+      "make",
+      "-j2"
+    ],
+    "cwd": "/tmp/mp2-reproduce-jls7f5y5/repo",
+    "log": "default-build.log"
+  }
+]
