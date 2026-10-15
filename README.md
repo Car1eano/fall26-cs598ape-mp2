@@ -31,6 +31,8 @@ records are in `results/profile-baseline`, `results/profile-o2-stack-cancer` and
 The hoist cleanup and integer-range changes fix memory/undefined-behavior issues;
 small timing differences after sorting are not evidence of additional speedup.
 
+Report: [PDF](mp2-report/report.pdf), [source and build instructions](mp2-report/README.md).
+
 ### Build and run
 
 Required for the three CSV benchmarks: a C++17 compiler, make, Git, tar and
