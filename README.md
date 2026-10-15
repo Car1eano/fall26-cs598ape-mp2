@@ -132,10 +132,58 @@ To reproduce the original image search, use a new result label:
 python3 tools/benchmark.py --label silk-baseline-repeat --datasets silk-wave
 ```
 
-The optimized Silk waves batch is incomplete and is not included in these
-results. Image memory checks and reconstructed PNG comparisons are pending.
-Square waves has not been measured. Clean-environment reproduction is pending;
-the primary experiment environment is the course VM.
+The completed optimized batch is in `results/silk-final-repeat`, using commit
+`5132428` with explicit `-O2`. Its measured internal times were 38.846, 38.586 and
+38.552 seconds (median 38.586 seconds), giving 11.05x median speedup over baseline.
+Each version has one warmup and three measured runs; warmups are excluded.
+All eight exported formulas and quality records match after timing removal.
+RGB averaged test MSE is 0.0277195631 in both versions. All eight reconstructed
+PNGs also have identical pixels and file hashes. The reconstructions differ
+from the original input; optimization preserved the baseline quality.
+
+Full-workload ASan/UBSan with leak detection passed in
+`results/memory-silk-asan-repeat`. The first diagnostic attempt in
+`results/memory-silk-asan` failed because LeakSanitizer could not operate under
+restricted execution; both attempts are retained. Diagnostic and Racket render
+times are excluded from performance statistics.
+Checks and statistics: `results/silk-checks/checks.json` and
+`results/silk-checks/summary.md`. Image comparison:
+[PNG](results/silk-checks/comparison.png), [SVG](results/silk-checks/comparison.svg).
+
+To repeat the optimized search and memory check, use new labels:
+
+```bash
+python3 tools/benchmark.py --ref 5132428 --label silk-final-new --datasets silk-wave '--flags=-std=c++17 -O2 -Wall -Wextra -I include -I.'
+python3 tools/memory.py --ref 5132428 --label memory-silk-asan-new --mode sanitize --datasets silk-wave
+racket results/silk-final-new/silk-wave-1.rkt results/silk-final-new/silk-wave-1.png
+```
+
+Square waves records are in `results/square-baseline` and `results/square-final`.
+Each version has one warmup and three measured runs, using the same input,
+seeds, 128 candidates, 16 generations and eight models per RGB channel.
+The original commit and flags match the Silk baseline; the optimized version
+uses `5132428` with `-O2`. Median internal time decreased from 1319.584 to
+120.481 seconds (10.95x speedup); sample standard deviations were 25.382 and
+0.146 seconds. All eight outputs match after timing removal, including formulas
+and RGB averaged test MSE (0.0175210362). All eight reconstructed PNGs have
+identical pixels and hashes. Full-workload ASan/UBSan with leak detection passed
+in `results/memory-square-asan`; diagnostic and render times are excluded.
+
+Checks and statistics: `results/square-checks/checks.json` and
+`results/square-checks/summary.md`. Image comparison:
+[PNG](results/square-checks/comparison.png), [SVG](results/square-checks/comparison.svg).
+Reproduce with new labels:
+
+```bash
+python3 tools/benchmark.py --label square-baseline-new --datasets square-wave
+python3 tools/benchmark.py --ref 5132428 --label square-final-new --datasets square-wave '--flags=-std=c++17 -O2 -Wall -Wextra -I include -I.'
+python3 tools/memory.py --ref 5132428 --label memory-square-asan-new --mode sanitize --datasets square-wave
+racket results/square-final-new/square-wave-1.rkt results/square-final-new/square-wave-1.png
+```
+
+Clean-environment reproduction is pending; the primary experiment environment
+is the course VM. Image baseline and optimized batches were measured separately
+on the same VM rather than interleaved. Shared host activity can affect timings.
 
 Docker is an optional setup. Its build and checks below passed.
 
