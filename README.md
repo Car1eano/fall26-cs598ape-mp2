@@ -36,7 +36,7 @@ small timing differences after sorting are not evidence of additional speedup.
 Required for the three CSV benchmarks: a C++17 compiler, make, Git, tar and
 Python 3. For diagnostics: binutils (`gprof`), Valgrind and GCC sanitizer support;
 perf is optional when the host permits it. Racket is only needed to run the
-exported Racket programs or render images. Docker is optional.
+exported Racket programs or render images.
 
 On Ubuntu, these packages cover builds and diagnostics:
 
@@ -285,32 +285,3 @@ VM; installation on a fresh OS was not tested. Temporary clone and venv were
 removed after preserving the evidence. The primary experiment environment is
 the course VM. Image baseline and optimized batches were measured separately
 on the same VM rather than interleaved. Shared host activity can affect timings.
-
-### Optional Docker
-
-Docker is an optional setup. Its build and checks below passed.
-
-Build and enter the tested container from the repository root:
-
-```bash
-./dockerbuild.sh cs598ape-mp2
-./dockerrun.sh cs598ape-mp2
-```
-
-Inside the container, `/host` is the mounted repository. Run:
-
-```bash
-make clean
-make -j2
-./genetic_benchmark diabetes
-exit
-```
-
-The image uses Ubuntu 24.04 and G++ 13.3.0 and includes the build, diagnostic,
-Racket PNG and Python plotting dependencies. Container checks passed for eleven
-Python tests, five C++ sanitizer tests, Diabetes execution and Valgrind, exported
-Racket module loading, PNG rendering smoke tests and gprof. Diabetes formulas
-and quality metrics matched the VM baseline. Records and image identifiers are
-in `results/docker-check/checks.json`. Host permissions still block perf.
-Container checks are separate from the VM performance measurements above.
-Files created in `/host` remain in the repository with the current user's UID.
