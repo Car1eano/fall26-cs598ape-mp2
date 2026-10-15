@@ -1,0 +1,46 @@
+[
+  {
+    "dataset": "square-wave",
+    "run": 0,
+    "warmup": true,
+    "returncode": 0,
+    "wall_seconds": 120.55714500300019,
+    "internal_seconds": 120.547313271,
+    "output_sha256": "98a97eb59ee4a3ff23d90304ac25103ae96083842d128199529ad046a5ccd26f",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "square-wave",
+    "run": 1,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 120.4904442269999,
+    "internal_seconds": 120.480953265,
+    "output_sha256": "98a97eb59ee4a3ff23d90304ac25103ae96083842d128199529ad046a5ccd26f",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "square-wave",
+    "run": 2,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 120.56376782200005,
+    "internal_seconds": 120.5540896,
+    "output_sha256": "98a97eb59ee4a3ff23d90304ac25103ae96083842d128199529ad046a5ccd26f",
+    "matches_warmup": true,
+    "quality": []
+  },
+  {
+    "dataset": "square-wave",
+    "run": 3,
+    "warmup": false,
+    "returncode": 0,
+    "wall_seconds": 120.28208313399955,
+    "internal_seconds": 120.272842513,
+    "output_sha256": "98a97eb59ee4a3ff23d90304ac25103ae96083842d128199529ad046a5ccd26f",
+    "matches_warmup": true,
+    "quality": []
+  }
+]

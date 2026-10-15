@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "square-wave",
+    "command": [
+      "./genetic_benchmark",
+      "square-wave"
+    ],
+    "returncode": 0
+  }
+]

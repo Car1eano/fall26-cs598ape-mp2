@@ -1,0 +1,13 @@
+{
+  "training_and_export_unchanged_except_sort_call": true,
+  "input": "benchmark/squared-waves.png",
+  "models_per_channel": 8,
+  "monochrome_shared_channels": false,
+  "population": 128,
+  "generations": 16,
+  "tournament_size": 4,
+  "base_seed": 2025000000,
+  "stopping_criteria": -1.0,
+  "channels": 3,
+  "total_models": 24
+}
